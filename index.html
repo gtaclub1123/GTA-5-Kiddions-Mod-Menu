@@ -161,15 +161,20 @@
     }
     @media (max-width: 900px) { .screenshots { grid-template-columns: 1fr 1fr; } }
     .shot {
-      aspect-ratio: 16/9;
-      background: linear-gradient(135deg, #20266b, #0b0f2a);
-      border-radius: 14px;
-      border: 1px solid rgba(233,235,255,.1);
-      display: grid;
-      place-items: center;
-      color: var(--muted);
-      font-weight: 600;
-    }
+  aspect-ratio: 16/9;
+  width: 100%;       /* занимает всю ячейку */
+  min-height: 200px; /* минимальная высота */
+  border-radius: 18px;
+  overflow: hidden;  /* обрезаем края изображения по скруглению */
+}
+
+.shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* сохраняет пропорции и масштабирует */
+  border-radius: 18px;
+}
+
     footer {
       margin-top: 80px;
       padding-top: 24px;
