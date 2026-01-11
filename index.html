@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GTA V Kiddions Mod Menu</title>
+  <meta name="description" content="Kiddions Mod Menu for GTA V – safe, simple and powerful mod menu with essential features." />
+  <style>
+    :root {
+      --bg: #0f1220;
+      --card: #151936;
+      --accent: #6c7bff;
+      --text: #e9ebff;
+      --muted: #a9aedc;
+      --success: #38e3a1;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 10% -10%, #1a1f55 0%, transparent 40%), var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+    header {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 32px;
+      align-items: center;
+      margin-top: 24px;
+    }
+    @media (max-width: 900px) {
+      header { grid-template-columns: 1fr; }
+    }
+    .badge {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(108,123,255,.15);
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 13px;
+      width: fit-content;
+    }
+    h1 {
+      font-size: clamp(32px, 4vw, 46px);
+      line-height: 1.15;
+      margin: 12px 0 10px;
+    }
+    .subtitle {
+      color: var(--muted);
+      max-width: 720px;
+      margin-bottom: 18px;
+    }
+    .cta {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+    .btn {
+      padding: 14px 22px;
+      border-radius: 14px;
+      border: none;
+      cursor: pointer;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #8f9bff);
+      color: #0b0f2a;
+      box-shadow: 0 10px 30px rgba(108,123,255,.35);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid rgba(233,235,255,.2);
+    }
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0));
+      border: 1px solid rgba(233,235,255,.08);
+      border-radius: 22px;
+      padding: 18px;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 14px;
+    }
+    .logo {
+      width: 120px;
+      height: 120px;
+      border-radius: 18px;
+      background: #0b0f2a;
+      border: 1px solid rgba(233,235,255,.1);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 22px;
+      color: var(--accent);
+    }
+    section {
+      margin-top: 64px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(233,235,255,.08);
+      border-radius: 18px;
+      padding: 20px;
+    }
+    .card h3 { margin-top: 0; }
+    .tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .tag {
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(56,227,161,.15);
+      color: var(--success);
+      font-weight: 600;
+      font-size: 13px;
+    }
+    .features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+    .features li {
+      padding-left: 26px;
+      position: relative;
+    }
+    .features li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      color: var(--success);
+      font-weight: 900;
+    }
+    .screenshots {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    @media (max-width: 900px) { .screenshots { grid-template-columns: 1fr 1fr; } }
+    .shot {
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, #20266b, #0b0f2a);
+      border-radius: 14px;
+      border: 1px solid rgba(233,235,255,.1);
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    footer {
+      margin-top: 80px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(233,235,255,.1);
+      color: var(--muted);
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <span class="badge">GTA V • Mod Menu</span>
+        <h1>Kiddions Mod Menu</h1>
+        <p class="subtitle">
+          Lightweight and user-friendly mod menu for GTA V. Includes essential features for gameplay customization
+          with a clean interface and minimal performance impact.
+        </p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#download">Download</a>
+          <a class="btn btn-secondary" href="#features">Features</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="logo">KIDDIONS</div>
+        <p class="subtitle">Version: 1.0.0 • Platform: Windows</p>
+      </div>
+    </header>
+
+    <section id="about">
+      <div class="grid">
+        <div class="card">
+          <h3>Short Description</h3>
+          <p>
+            Kiddions Mod Menu is a simple external menu for GTA V designed for ease of use and stability.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Tags</h3>
+          <div class="tags">
+            <span class="tag">GTA V</span>
+            <span class="tag">Mod Menu</span>
+            <span class="tag">External</span>
+            <span class="tag">Windows</span>
+            <span class="tag">Utility</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Info</h3>
+          <p>No installer required • Portable • Easy to update</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <h2>Features</h2>
+      <ul class="features">
+        <li>Player options (god mode, wanted level, stats)</li>
+        <li>Vehicle spawn and customization</li>
+        <li>Teleport and world options</li>
+        <li>Money & session utilities</li>
+        <li>Hotkeys and simple navigation</li>
+      </ul>
+    </section>
+
+    <section id="screenshots">
+      <h2>Screenshots</h2>
+      <div class="screenshots">
+        <div class="shot">Screenshot 1</div>
+        <div class="shot">Screenshot 2</div>
+        <div class="shot">Screenshot 3</div>
+        <div class="shot">Screenshot 4</div>
+      </div>
+    </section>
+
+    <section id="download">
+      <div class="card">
+        <h2>Download</h2>
+        <p>Click the button below to download the latest version.</p>
+        <a class="btn btn-primary" href="#">Download Kiddions Mod Menu</a>
+      </div>
+    </section>
+
+    <footer>
+      <span>© 2026 Kiddions Mod Menu</span>
+      <span>Not affiliated with Rockstar Games</span>
+    </footer>
+  </div>
+</body>
+</html>
